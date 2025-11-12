@@ -15,14 +15,14 @@ export default function Info() {
             variants={staggerContainer}
         >
             <div className="max-w-4xl w-full mx-auto space-y-6 text-center md:text-left">
-                <motion.p className="text-gray-300 text-lg md:text-xl leading-relaxed" variants={fadeUp}>
+                <motion.p className="text-body text-lg md:text-xl leading-relaxed" variants={fadeUp}>
                     Gostaríamos de convidá-los para nossa{' '}
                     <span className="font-semibold text-gray-100">
                         apresentação do nosso Trabalho de Graduação
                     </span>
                 </motion.p>
 
-                <motion.p className="text-lg md:text-2xl text-gray-200" variants={fadeUp}>
+                <motion.p className="text-lg md:text-2xl text-body" variants={fadeUp}>
                     Fatec Itapetininga —{' '}
                     <span className="font-semibold text-gray-100">25 de novembro às 21:25</span>
                 </motion.p>

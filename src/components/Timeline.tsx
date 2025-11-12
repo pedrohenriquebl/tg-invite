@@ -29,8 +29,8 @@ export default function Timeline() {
                                     {renderIconFor(e.title)}
                                 </div>
                                 <div>
-                                    <div className="font-medium text-gray-100">{e.title}</div>
-                                    <div className="text-sm text-gray-300 mt-1">{e.desc}</div>
+                                    <div className="font-medium text-body">{e.title}</div>
+                                    <div className="text-sm text-muted mt-1">{e.desc}</div>
                                 </div>
                             </div>
                         </div>

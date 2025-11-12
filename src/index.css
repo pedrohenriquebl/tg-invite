@@ -11,17 +11,23 @@ html {
 }
 
 :root {
-  --accent: #00c2ff;
+  --accent: #00b0e6; /* slightly deeper for consistent contrast */
   --muted-1: #0b0b0d;
   --muted-2: #0f1720;
-  --card-bg: rgba(17,24,39,0.55);
+  --card-bg: rgba(17,24,39,0.82); /* darker card bg for better contrast */
+  --text-body: #e6eef6; /* primary body text on dark backgrounds */
+  --text-muted: #9fb0c2; /* secondary text for labels and captions */
 }
 
 /* Utility tokens that mirror some Tailwind usages so we can tweak identity quickly */
 .text-accent { color: var(--accent); }
 .bg-accent { background-color: var(--accent); }
 .border-accent { border-color: var(--accent); }
-.card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.06); }
+.card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 6px 18px rgba(2,6,23,0.6); }
+
+/* Accessible text tokens */
+.text-body { color: var(--text-body); }
+.text-muted { color: var(--text-muted); }
 
 /* Slightly larger section spacing and nicer max widths for identity */
 .section-max { max-width: 78rem; margin-left: auto; margin-right: auto; }

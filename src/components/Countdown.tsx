@@ -47,13 +47,13 @@ export default function Countdown() {
   ];
 
   return (
-    <motion.div className="flex gap-3 text-center text-white font-mono text-base sm:text-lg" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <motion.div className="flex gap-3 text-center font-mono text-base sm:text-lg" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       {units.map((u) => (
         <div key={u.key} className="card px-4 py-3 rounded-lg min-w-16">
-          <p className="text-2xl sm:text-3xl font-bold text-accent">
+          <p className="text-2xl sm:text-3xl font-bold text-accent text-body">
             {String(timeLeft[u.key as keyof typeof timeLeft] ?? '00').padStart(2, '0')}
           </p>
-          <p className="text-xs uppercase text-gray-300 mt-1">{u.label}</p>
+          <p className="text-xs uppercase text-muted mt-1">{u.label}</p>
         </div>
       ))}
     </motion.div>
