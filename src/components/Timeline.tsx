@@ -24,12 +24,51 @@ export default function Timeline() {
                     <motion.div key={e.time} className="flex items-center gap-4" variants={fadeUp}>
                         <div className="w-20 text-right text-sm text-gray-400">{e.time}</div>
                         <div className="flex-1 card p-4 rounded-lg hover:scale-[1.01] transition-transform">
-                            <div className="font-medium text-gray-100">{e.title}</div>
-                            <div className="text-sm text-gray-300 mt-1">{e.desc}</div>
+                            <div className="flex items-start gap-3">
+                                <div className="shrink-0 mt-1">
+                                    {renderIconFor(e.title)}
+                                </div>
+                                <div>
+                                    <div className="font-medium text-gray-100">{e.title}</div>
+                                    <div className="text-sm text-gray-300 mt-1">{e.desc}</div>
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
                 ))}
             </div>
         </motion.div>
+    );
+}
+
+function renderIconFor(title: string) {
+    if (title.toLowerCase().includes('chegada')) {
+        return (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-accent">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.2" fill="rgba(0,194,255,0.06)" />
+                <path d="M12 7v6l4 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        );
+    }
+    if (title.toLowerCase().includes('início')) {
+        return (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-accent">
+                <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.2" fill="rgba(0,194,255,0.06)" />
+                <path d="M10 8v8l6-4-6-4z" fill="currentColor" />
+            </svg>
+        );
+    }
+    if (title.toLowerCase().includes('coment')) {
+        return (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-accent">
+                <path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="rgba(0,194,255,0.06)" />
+            </svg>
+        );
+    }
+    // default
+    return (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-accent">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.2" fill="rgba(0,194,255,0.06)" />
+        </svg>
     );
 }

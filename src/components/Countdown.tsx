@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
+import { fadeUp } from '../animations/variants';
 
 export default function Countdown() {
-  const targetDate = new Date("2025-11-25T21:25:00").getTime();
   const [timeLeft, setTimeLeft] = useState<{
     days?: number;
     hours?: number;
@@ -11,6 +12,8 @@ export default function Countdown() {
   }>({});
 
   useEffect(() => {
+    const targetDate = new Date("2025-11-25T21:25:00").getTime();
+
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const diff = targetDate - now;
@@ -36,16 +39,23 @@ export default function Countdown() {
     return <p className="text-accent text-xl">A apresentação já começou! 🚀</p>;
   }
 
+  const units = [
+    { key: 'days', label: 'Dias' },
+    { key: 'hours', label: 'Horas' },
+    { key: 'minutes', label: 'Minutos' },
+    { key: 'seconds', label: 'Segundos' },
+  ];
+
   return (
-    <div className="flex gap-4 text-center text-white font-mono text-lg sm:text-2xl">
-      {["days", "hours", "minutes", "seconds"].map((unit) => (
-        <div key={unit}>
-          <p className="text-3xl font-bold text-accent">
-            {timeLeft[unit as keyof typeof timeLeft] ?? "00"}
+    <motion.div className="flex gap-3 text-center text-white font-mono text-base sm:text-lg" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+      {units.map((u) => (
+        <div key={u.key} className="card px-4 py-3 rounded-lg min-w-16">
+          <p className="text-2xl sm:text-3xl font-bold text-accent">
+            {String(timeLeft[u.key as keyof typeof timeLeft] ?? '00').padStart(2, '0')}
           </p>
-          <p className="text-sm uppercase">{unit}</p>
+          <p className="text-xs uppercase text-gray-300 mt-1">{u.label}</p>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
