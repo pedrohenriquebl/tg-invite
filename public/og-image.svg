@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1020" />
+      <stop offset="100%" stop-color="#071024" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace; font-size:48px; fill:#e6eef6; font-weight:700 }
+      .subtitle { font-family: 'JetBrains Mono', monospace; font-size:22px; fill:#9fb0c2 }
+      .badge { font-family: 'JetBrains Mono', monospace; font-size:18px; fill:#000 }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)" />
+  <!-- subtle decorative circle -->
+  <g opacity="0.06" fill="#00b0e6">
+    <circle cx="980" cy="120" r="160" />
+    <circle cx="220" cy="520" r="260" />
+  </g>
+
+  <g transform="translate(80,160)">
+    <text x="0" y="0" class="title">Coursekeeper</text>
+    <text x="0" y="72" class="subtitle">Apresentação de Trabalho de Graduação — 25 de novembro</text>
+  </g>
+
+  <!-- location or call-to-action -->
+  <g transform="translate(80,520)">
+    <rect x="0" y="-36" width="320" height="44" rx="8" fill="#00b0e6" opacity="0.95" />
+    <text x="16" y="0" class="badge">Fatec Itapetininga — 21:25</text>
+  </g>
+</svg>
