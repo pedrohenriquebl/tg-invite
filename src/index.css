@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
   background-color: #000;
   color: #fff;
 }
