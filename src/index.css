@@ -6,7 +6,67 @@ body {
   color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --accent: #00c2ff;
+  --muted-1: #0b0b0d;
+  --muted-2: #0f1720;
+  --card-bg: rgba(17,24,39,0.55);
+}
+
+/* Utility tokens that mirror some Tailwind usages so we can tweak identity quickly */
+.text-accent { color: var(--accent); }
+.bg-accent { background-color: var(--accent); }
+.border-accent { border-color: var(--accent); }
+.card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.06); }
+
+/* Slightly larger section spacing and nicer max widths for identity */
+.section-max { max-width: 78rem; margin-left: auto; margin-right: auto; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* hide scrollbar for nav-scroll on webkit and show touch scroll */
+.nav-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+.nav-scroll {
+  scrollbar-width: none; /* firefox */
+}
+
 @keyframes pulseGlow {
   0%, 100% { text-shadow: 0 0 10px rgba(0, 194, 255, 0.3); }
   50% { text-shadow: 0 0 25px rgba(0, 194, 255, 0.6); }
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  background: var(--card-bg);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+  z-index: 60;
+  backdrop-filter: blur(6px);
+  font-size: 0.95rem;
+  opacity: 1;
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
 }

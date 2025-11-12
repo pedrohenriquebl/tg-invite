@@ -10,7 +10,8 @@ export default function Team() {
 
     return (
         <motion.section
-            className="relative flex flex-col items-center justify-center px-6 py-24 bg-linear-to-b from-gray-950 to-black text-center overflow-hidden"
+            id="team"
+            className="relative flex flex-col items-center justify-center px-4 py-12 md:py-24 bg-linear-to-b from-gray-950 to-black text-center overflow-hidden min-h-[60vh] md:min-h-[65vh]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -24,7 +25,7 @@ export default function Team() {
                 {members.map((m) => (
                     <motion.div key={m.name} className={`relative ${m.style}`} variants={fadeUp}>
                         <div className="overflow-hidden rounded-lg border border-gray-700 shadow-[0_0_25px_rgba(0,0,0,0.4)]">
-                            <img src={m.src} alt={m.alt} className="w-64 h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                            <img src={m.src} alt={m.alt} className="w-40 h-40 md:w-64 md:h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                         </div>
                         <p className="mt-3 text-gray-300 font-medium">{m.name}</p>
                     </motion.div>
