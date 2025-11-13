@@ -65,7 +65,7 @@ export default function AddToCalendar() {
         a.click();
         a.remove();
         URL.revokeObjectURL(url);
-        showToast('.ics baixado');
+        showToast('Adicionado ao Safari');
     };
 
     const openGoogle = () => {
@@ -92,7 +92,7 @@ export default function AddToCalendar() {
                     <path d="M16 11v6H8v-6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M12 11v6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                Baixar .ics
+                Adicionar ao Safari
             </button>
             <button
                 onClick={openGoogle}

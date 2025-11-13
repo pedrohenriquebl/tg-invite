@@ -5,7 +5,6 @@ const items = [
     { id: 'home', label: 'Início' },
     { id: 'info', label: 'Informações' },
     { id: 'team', label: 'Integrantes' },
-    { id: 'about', label: 'Sobre' },
     { id: 'location', label: 'Localização' },
 ];
 
